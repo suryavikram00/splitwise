@@ -1,0 +1,42 @@
+<div>
+
+    <form [formGroup]="EditBillForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="col">
+              <input type="text" formControlName="description" class="form-control" placeholder="Description">
+            </div>
+            <div class="col">
+              <input type="number" formControlName="billPrice" class="form-control" placeholder="Price">
+            </div>
+          </div> 
+          <br>
+          <div class="form-row">
+              <div class="col">
+                  <select class="form-control" formControlName="paidBy" >
+                      <option value="Surya Vikram" select>Surya Vikram</option>
+                      <option value="Kailash">Kailash</option>
+                      <option value="Subramanian">Subramanian</option>
+                      <option value="Gowtham">Gowtham</option>
+                    </select>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><span ><i class="fa fa-th fa-lg" data-toggle="modal" data-target="#splitByModal"></i></span></div>
+                    </div>
+                    <input  class="form-control" formControlName="splitBy" id="Split" placeholder="Split Equally" readonly>               
+                  </div>
+              </div>
+            </div> 
+            <br>
+        <div >
+            <button  type="submit" class="btn btn-primary btn-md btn-block">Save Bill</button>
+            <button  [routerLink]=" ['/transactiondetails']" class="btn btn-primary btn-md btn-block">Go backl</button>
+        </div>
+
+
+
+      </form>
+
+
+</div>

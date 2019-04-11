@@ -1,0 +1,114 @@
+<div>
+  <form [formGroup]="AddBillForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
+          <div class="col-sm-10">
+            <input type="text" formControlName="description" class="form-control" id="Description" placeholder="Description">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="price" class="col-sm-2 col-form-label">Price</label>
+          <div class="col-sm-10">
+            <input type="number" formControlName="billPrice" min="0" class="form-control" id="Price" placeholder="Price">
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2">  
+          <label for="paidBy"  class="col-form-label">Paid By</label>
+            </div>
+            <div class="col-sm-4">
+                <select class="form-control" formControlName="paidBy" >
+                    <option value="surya" >Surya</option>
+                    <option value="kailash">Kailash</option>
+                    <option value="subbu">Subramanian</option>
+                    <option value="gowtham">Gowtham</option>
+                  </select>
+               </div>
+            <div class="col-sm-2">
+            <label for="Split" class="col-form-label">& Split</label>
+          </div>
+           <!-- <div class="col-sm-4">
+                <div class="form-group">
+                   
+                  <input  class="form-control" id="Split" placeholder="Split Equally" readonly>               
+                </div>     
+            </div>-->
+
+            <div class="col-sm-4 my-1">
+                
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><span ><i class="fa fa-th fa-lg" data-toggle="modal" data-target="#splitByModal"></i></span></div>
+                  </div>
+                  <input  class="form-control"  id="Split" placeholder="Split Equally" readonly>               
+                </div>
+              </div>
+
+        </div>
+        
+        
+        <div >
+            <button  type="submit" class="btn btn-primary btn-md btn-block">Save Bill</button>
+
+        </div>
+
+
+
+      </form>
+</div>
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal " id="splitByModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!--<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>-->
+          <select class="form-control">
+              <option value="equally">Split Equally</option>
+              <option value="unequally">Split Unequally</option>
+              <option value="percentages">Split by Percentages</option>
+              <option value="shares">Split by Shares</option>
+            </select>
+              
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Surya Vikram" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Surya Vikram
+                </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Kailash" id="defaultCheck2">
+                  <label class="form-check-label" for="defaultCheck2">
+                    Kailash
+                  </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Subramanian" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                      Subramanian
+                    </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="Gowtham" id="defaultCheck4">
+                      <label class="form-check-label" for="defaultCheck4">
+                        Gowtham
+                      </label>
+                    </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>

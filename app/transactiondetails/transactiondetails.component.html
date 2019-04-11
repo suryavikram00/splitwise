@@ -1,0 +1,46 @@
+<!--<div *ngFor='let bill of billListObject'>
+  
+  <div class="col-md-3">
+    <div class="form-group row">
+    <mark><h5>{{bill.description}}</h5></mark>
+    </div>
+    <div class="form-group row">
+      <h5>
+          {{bill.paidBy}}&ensp;<small class="text-muted">paid Rs.{{bill.price}}</small>
+        </h5>  
+    </div>
+  </div>
+  <div class="col-md-9 ">
+    <app-addbill></app-addbill>
+  </div>
+    <hr>
+  </div>-->
+
+  <div>
+      <table class="table table-hover" >
+          <tbody>
+            <tr class="col-md-12" *ngFor='let bill of billListObject' style="display:flex">
+              <td class="col-md-4">
+                  <div class="form-group row">
+                      <mark><h5>{{bill.description}}</h5></mark>
+                      <div style="text-align: left"><span ><a><i class="fas fa-pen" [routerLink]=" ['editbill']"></i></a></span></div>
+                      </div>
+                      <div class="form-group row">
+                        <h5>
+                            {{bill.paidBy}}&ensp;<small class="text-muted">paid Rs.{{bill.price}}</small>
+                          </h5>  
+                      </div>  
+                      <div class="form-group row">
+                          <h6>
+                             <small class="text-muted">Added by You on 22, March 2018</small>
+                            </h6>  
+                        </div>  
+              </td>
+              <td class="col-md-8">
+              <router-outlet ></router-outlet>
+              </td>
+             
+            </tr>
+          </tbody>
+        </table>
+  </div>
